@@ -41,9 +41,9 @@ var REQUIRED_FILES = [
     '/gallery/1.jpg',
     '/gallery/2.jpg',
     '/gallery/3.jpg',
+    '/gallery/no-connection.jpg',
     '/style.css',
     '/index.html',
-    '/index.js',
     '/app.js'
 ];
 
@@ -76,6 +76,9 @@ self.addEventListener('fetch', function (event) {
             }
             console.log('[fetch] Returning from server: ', event.request.url);
             return fetch(event.request);
+        })
+        .catch(function(){
+            return caches.match('/gallery/no-connection.jpg');
         })
     );
 });
