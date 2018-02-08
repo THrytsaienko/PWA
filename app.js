@@ -29,10 +29,10 @@ navigator.serviceWorker.addEventListener('controllerchange', function (event) {
             console.log('[controllerchange][statechange] ' +
                 'A "statechange" has occured: ', this.state
             );
-            if (this.state === 'activated') {
-                document.getElementById('offlineNotification')
-                    .classList.remove('hidden');
-            }
+            // if (this.state === 'activated') {
+            //     document.getElementById('offlineNotification')
+            //         .classList.remove('hidden');
+            // }
         }
     );
 });
